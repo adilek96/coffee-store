@@ -1,14 +1,20 @@
 import React from "react";
 import Product from "../product/Product.jsx";
-import SearchForm from "../searchForm/SearchForm";
 
 import "./productList.sass";
 
 const ProductList = () => {
   return (
-    <section>
-      <SearchForm />
-      <Product />
+    <section className="product-list">
+      <div className="product-list-wrapper">
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+      </div>
     </section>
   );
 };
