@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import "./beans.sass"
+import React from "react";
+import "./beans.sass";
 
-export default class Beans extends Component {
-  render() {
-    return (
-        <div className="header-beans">
-            <span></span>
-            <img src="../img/coffee-beans-black.svg" alt="baeans" />
-            <span></span>
-        </div>
-    )
-  }
-}
+const Beans = () => {
+  return (
+    <div className="header-beans">
+      <span></span>
+      <img src="../img/coffee-beans-black.svg" alt="baeans" />
+      <span></span>
+    </div>
+  );
+};
+
+export default Beans;
