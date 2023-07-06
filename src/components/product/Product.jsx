@@ -1,15 +1,15 @@
 import React from "react";
 import "./product.sass";
 
-const Product = () => {
+const Product = ({ id, name, country, price, image }) => {
   return (
-    <div className="product-wrapper">
+    <div className="product-wrapper" key={id}>
       <div className="product-img">
-        <img src="../img/coffee.png" alt="coffee" />
+        <img src={image} alt="coffee" />
       </div>
-      <h4>AROMISTICO Coffee 1 kg</h4>
-      <p className="from">Brazil</p>
-      <p className="price">6.99$</p>
+      <h4>{name}</h4>
+      <p className="from">{country}</p>
+      <p className="price">{price}$</p>
     </div>
   );
 };

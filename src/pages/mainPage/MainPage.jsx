@@ -6,13 +6,13 @@ import Footer from "../../components/footer/Footer.jsx";
 
 import "./mainPage.sass";
 
-const MainPage = () => {
+const MainPage = ({ data }) => {
   return (
     <>
       <MainHeader />
       <main>
         <AboutUs />
-        <OurBest />
+        <OurBest data={data} />
       </main>
       <Footer />
     </>

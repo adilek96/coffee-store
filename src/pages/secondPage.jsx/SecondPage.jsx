@@ -5,14 +5,14 @@ import AboutBeans from "../../components/aboutBeans/AboutBeans";
 import ProductList from "../../components/productList/ProductList";
 import SearchForm from "../../components/searchForm/SearchForm";
 
-const SecondPage = () => {
+const SecondPage = ({ data }) => {
   return (
     <>
       <SecondHeader />
       <AboutBeans />
       <hr />
       <SearchForm />
-      <ProductList />
+      <ProductList data={data} />
       <Footer />
     </>
   );
