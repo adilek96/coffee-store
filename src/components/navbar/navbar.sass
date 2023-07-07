@@ -1,22 +1,29 @@
 nav
-    display: flex
-    margin-left: 148px
+
+    margin-left: 10vw
     padding-top: 30px
 
     .navbar
         list-style-type: none
-        width: 350px
+        width: 40vw
+
         display: flex
-        justify-content: space-between
+        justify-content: flex-start
+        gap: 60px
         background: url("../../../public/img/coffee-beans-log-white.svg") no-repeat
         margin: 0
         padding-left: 30px
         padding-top: 20px
 
+        @media screen and (max-width: 920px)
+            width: 80vw
+            gap: 40px
+
         li
             color: white
             font-size: 12px
             transition-duration: 0.5s
+
             &:hover
                 transform: scale(1.1, 1.1)
 

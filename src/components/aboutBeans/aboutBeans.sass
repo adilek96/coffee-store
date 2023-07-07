@@ -3,15 +3,22 @@
     justify-content: center
     gap: 30px
     margin-top: 50px
+
     .block-image
         background: url("../../../public/img/girl.png") no-repeat
         width: 332px
         height: 415px
+        @media screen and (max-width: 920px)
+            display: none
+
     .block-content
-        width: 346px
+        width: 30vw
         display: flex
         flex-direction: column
         text-align: center
+        @media screen and (max-width: 920px)
+            width: 60vw
+
         h2
             font-size: calc(12px + 12 * ((100vw - 320px) / (1280 - 320)))
             margin-top: 40px
