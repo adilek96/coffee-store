@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SecondHeader from "../../components/header/secondHeader/SecondHeader";
 import Footer from "../../components/footer/Footer";
 import AboutBeans from "../../components/aboutBeans/AboutBeans";
@@ -6,13 +6,30 @@ import ProductList from "../../components/productList/ProductList";
 import SearchForm from "../../components/searchForm/SearchForm";
 
 const SecondPage = ({ data }) => {
+  const [sortingTrigger, setSortingTrigger] = useState("All");
+  const [findTrigger, setFindTrigger] = useState("");
+
+  const onSortingTriggerChange = (e) => {
+    setSortingTrigger(e);
+  };
+
+  const onFindTriggerChange = (e) => {
+    setFindTrigger(e);
+  };
   return (
     <>
       <SecondHeader />
       <AboutBeans />
       <hr />
-      <SearchForm />
-      <ProductList data={data} />
+      <SearchForm
+        onSortingTriggerChange={onSortingTriggerChange}
+        onFindTriggerChange={onFindTriggerChange}
+      />
+      <ProductList
+        data={data}
+        sortingTrigger={sortingTrigger}
+        findTrigger={findTrigger}
+      />
       <Footer />
     </>
   );
