@@ -2,7 +2,7 @@ import React from "react";
 import Product from "../../components/product/Product";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-
+import nextId from "react-id-generator";
 import "./ourBest.sass";
 
 const OurBest = ({ data }) => {
@@ -18,8 +18,8 @@ const OurBest = ({ data }) => {
         const { id, ...otherItem } = item;
         if (id === num) {
           return (
-            <SplideSlide>
-              <Product key={id} {...otherItem} />
+            <SplideSlide key={nextId()}>
+              <Product {...otherItem} />
             </SplideSlide>
           );
         }
