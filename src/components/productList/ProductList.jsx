@@ -3,7 +3,12 @@ import Product from "../product/Product.jsx";
 
 import "./productList.sass";
 
-const ProductList = ({ data, sortingTrigger, findTrigger }) => {
+const ProductList = ({
+  data,
+  sortingTrigger,
+  findTrigger,
+  onProductSelect,
+}) => {
   // отображение продуктов на странице
   // сортировка продуктов по странам
   const sortingData = data.filter((item) => {
@@ -25,7 +30,9 @@ const ProductList = ({ data, sortingTrigger, findTrigger }) => {
   //вывод элементов
   const elements = findingData.map((item) => {
     const { id, ...itemProps } = item;
-    return <Product key={id} {...itemProps} />;
+    return (
+      <Product onProductSelect={onProductSelect} key={id} {...itemProps} />
+    );
   });
 
   console.log(findTrigger);

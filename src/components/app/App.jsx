@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import MainPage from "../../pages/mainPage/MainPage";
 import SecondPage from "../../pages/secondPage.jsx/SecondPage";
 import ThirthPage from "../../pages/thirthPage/ThirthPage";
+import ProductPage from "../../pages/productPage/ProductPage";
 import { Routes, Route } from "react-router-dom";
 import "./app.sass";
 
@@ -88,12 +89,22 @@ const App = () => {
     },
   ];
 
+  const [selected, setSelected] = useState("");
+  const onProductSelect = (e) => {
+    setSelected(e);
+  };
   return (
     <>
       <Routes>
         <Route path="/" element={<MainPage data={data} />} />
-        <Route path="/our-coffee" element={<SecondPage data={data} />} />
-        <Route path="/for-your-pleasure" element={<ThirthPage />} />
+        <Route
+          path="/our-coffee"
+          element={<SecondPage onProductSelect={onProductSelect} data={data} />}
+        />
+        <Route
+          path="/for-your-pleasure"
+          element={<ProductPage selected={selected} data={data} />}
+        />
       </Routes>
     </>
   );

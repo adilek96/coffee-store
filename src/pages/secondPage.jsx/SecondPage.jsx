@@ -5,7 +5,7 @@ import AboutBeans from "../../components/aboutBeans/AboutBeans";
 import ProductList from "../../components/productList/ProductList";
 import SearchForm from "../../components/searchForm/SearchForm";
 
-const SecondPage = ({ data }) => {
+const SecondPage = ({ data, onProductSelect }) => {
   const [sortingTrigger, setSortingTrigger] = useState("All");
   const [findTrigger, setFindTrigger] = useState("");
 
@@ -27,6 +27,7 @@ const SecondPage = ({ data }) => {
       />
       <ProductList
         data={data}
+        onProductSelect={onProductSelect}
         sortingTrigger={sortingTrigger}
         findTrigger={findTrigger}
       />
