@@ -1,11 +1,12 @@
 import React from "react";
 import Product from "../../components/product/Product";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Link } from "react-router-dom";
 import "@splidejs/react-splide/css";
 import nextId from "react-id-generator";
 import "./ourBest.sass";
 
-const OurBest = ({ data }) => {
+const OurBest = ({ data, onProductSelect }) => {
   const randomNums = [];
   for (let i = 0; i < 4; i++) {
     let num = Math.floor(Math.random() * 8) + 1;
@@ -15,11 +16,17 @@ const OurBest = ({ data }) => {
   const elements = randomNums
     .map((num) => {
       return data.map((item) => {
-        const { id, ...otherItem } = item;
+        const { id, ...itemProps } = item;
         if (id === num) {
           return (
             <SplideSlide key={nextId()}>
-              <Product {...otherItem} />
+              <Link to={`/our-coffee/${id}`}>
+                <Product
+                  onProductSelect={onProductSelect}
+                  key={id}
+                  {...itemProps}
+                />
+              </Link>
             </SplideSlide>
           );
         }

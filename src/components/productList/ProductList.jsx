@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Product from "../product/Product.jsx";
 
 import "./productList.sass";
@@ -31,11 +32,12 @@ const ProductList = ({
   const elements = findingData.map((item) => {
     const { id, ...itemProps } = item;
     return (
-      <Product onProductSelect={onProductSelect} key={id} {...itemProps} />
+      <Link to={`/our-coffee/${id}`} key={id}>
+        <Product {...itemProps} />
+      </Link>
     );
   });
 
-  console.log(findTrigger);
   return (
     <section className="product-list">
       <div className="product-list-wrapper">{elements}</div>

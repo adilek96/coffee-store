@@ -1,16 +1,25 @@
 
 .productPage
     display: flex
-    width: 70vw
-    margin: 0 auto
+    width: 50vw
+    margin: 50px auto
+
     .product-container
         display: flex
         gap: 40px
-        &-img
-            width: 200px
-        &-about
+        @media screen and (max-width: 720px)
+            flex-direction: column
+        .product-image
+            width: 300px
+            height: 300px
+            margin: auto 0
+            border-radius: 8px
+            box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.25)
+        .product-about
             display: flex
             flex-direction: column
-            text-align: center
+            text-align: left
         h2
             margin: 0 auto
+        p
+            font-size: calc(10px + 4 * ((100vw - 320px) / (1280 - 320)))

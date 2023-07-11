@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MainPage from "../../pages/mainPage/MainPage";
 import SecondPage from "../../pages/secondPage.jsx/SecondPage";
 import ThirthPage from "../../pages/thirthPage/ThirthPage";
@@ -89,21 +89,19 @@ const App = () => {
     },
   ];
 
-  const [selected, setSelected] = useState("");
-  const onProductSelect = (e) => {
-    setSelected(e);
-  };
+  // const [selected, setSelected] = useState("");
+  // const onProductSelect = (e) => {
+  //   setSelected(e);
+  // };
   return (
     <>
       <Routes>
         <Route path="/" element={<MainPage data={data} />} />
+        <Route path="/our-coffee" element={<SecondPage data={data} />} />
+        <Route path="/for-your-pleasure" element={<ThirthPage />} />
         <Route
-          path="/our-coffee"
-          element={<SecondPage onProductSelect={onProductSelect} data={data} />}
-        />
-        <Route
-          path="/for-your-pleasure"
-          element={<ProductPage selected={selected} data={data} />}
+          path="/our-coffee/:ident"
+          element={<ProductPage data={data} />}
         />
       </Routes>
     </>
